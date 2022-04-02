@@ -44,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
         String s= "ИКБО-27-20";
 
         try {
-            System.out.println("ИКБО-27-20\t" + p.find(s));
+            System.out.println("sout");
+            System.out.println(p.find(s));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 //        try {
 //            p.find("ИКБО-27-20");
 //        } catch (IOException e) {
