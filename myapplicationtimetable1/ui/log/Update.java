@@ -46,13 +46,6 @@ public class Update {
                 } catch (IOException e) {
                     builder.append("Error : ").append(e.getMessage()).append("\n");
                 }
-
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        result.setText(builder.toString());
-//                    }
-//                });
             }
         }).start();
     }

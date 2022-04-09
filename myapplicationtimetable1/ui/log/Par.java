@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -22,9 +23,10 @@ public class Par {
     public StringBuilder otvet = new  StringBuilder();
 
     public String find (String group) throws IOException {
-        group = "ИКБО-27-20";
+        //group = "ИКБО-27-20";
         File myFolder = new File("/storage/emulated/0/Download/my");
         File[] files = myFolder.listFiles();
+        //SearchFile(group, "/storage/emulated/0/Download/my");
         for (int i = 0; files.length > i; i++){
             if (SearchGroup(group,files[i].toString())==1){
                 gotovo = printExel(files[i].toString());
@@ -37,6 +39,50 @@ public class Par {
         return  gotovo;
     }
 
+    public void SearchFile(String group, String puti) throws IOException {
+        System.out.println("SearchFile");
+        switch (group.charAt(0)){
+            case  ('К'):
+
+                break;
+            case ('И'):
+                System.out.println('И');
+                int ss = (int)group.charAt(8) + (int)group.charAt(9);
+                System.out.println(group.charAt(8) + " " + group.charAt(9));
+                System.out.println("intss " + ss);
+
+                break;
+            case ('Б'):
+                System.out.println('Б');
+                //КодN;
+                break;
+            case ('Э'):
+                System.out.println('Э');
+                //КодN;
+                break;
+            case ('Р'):
+                System.out.println('Р');
+                //КодN;
+                break;
+            case ('У'):
+                System.out.println('У');
+                //КодN;
+                break;
+            case ('Х'):
+                System.out.println('Х');
+                //КодN;
+                break;
+            default:
+                System.out.println("КодВыбораПоУмолчанию");
+
+                break;
+        }
+
+
+
+    }
+
+
 
 
 
@@ -46,9 +92,20 @@ public class Par {
         System.out.println(puti);
         FileInputStream fileInputStream = new FileInputStream(puti);
         Workbook wb = new XSSFWorkbook(fileInputStream);
-        for (Row row : wb.getSheetAt(0)) {
+        int x = 0;
+        Row row = wb.getSheetAt(0).getRow(1);
+        System.out.println(row);
+
+        //for (Row row : wb.getSheetAt(1)){
+            //Row row = wb.getSheetAt(0).getRow(1);
+            Cell c = row.getCell(0);
+            System.out.println("Cell c\t" + c.toString());
+            //x++;
+            //System.out.println("\t\t" + x);
+            //System.out.println("ROW\t");
             for (Cell cell : row){
                 Cell r = cell;
+                System.out.println("r.toString()\t" + r.toString());
 
                 if (getCellText(cell).equals(group)){
                     indexY = r.getRowIndex();
@@ -57,7 +114,7 @@ public class Par {
                     break;
                 }
             }
-        }
+        //}
         return test;
     }
 

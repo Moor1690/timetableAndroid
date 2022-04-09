@@ -33,49 +33,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////Мой код ///////////
+/////////////////////////////////////////////////////////////////////////Код ///////////
 ////////////////////////////////////////////////////////////////////////////////////
 
         System.out.println("Старт");
+        //Update.deleteOld();
 
-        //Update.getWebsite();
-        System.out.println("ИКБО-27-20\t");
+        Update.getWebsite();
+        //System.out.println("ИКБО-27-20\t");
         Par p = new Par();
         String s= "ИКБО-27-20";
 
-        try {
-            System.out.println("sout");
-            System.out.println(p.find(s));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
 //        try {
-//            p.find("ИКБО-27-20");
+//            System.out.println("try ");
+//            System.out.println(p.find(s));
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
-//        try {
-//            parsHtml();
-//        } catch (IOException e) {
-//            System.out.println("IOException: ");
-//            e.printStackTrace();
-//        }
-
-
-        //Document document = new Document(Jsoup.connect("https://www.mirea.ru/schedule/").get());
-
-
-        //Document document = Jsoup.connect("https://www.mirea.ru/schedule/").get();
-
-        //System.out.println("\n\n\n\n MyText:   "+Jsoup.connect("https://www.mirea.ru/schedule/").get()+"   End Text\n\n\n\n");
-
-
-        /*Elements elements = document.select(".uk-link-toggle");
-        for (Element element: elements) {
-            System.out.println(element.attr("abs:href"));
-        }*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////
